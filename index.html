@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Evo API Tests</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,100,100italic,300italic,400italic,700,700italic">
+        
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+		<!-- Font Awesome -->
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+    </head>
+
+    <body>
+
+        <!-- Coming Soon -->
+        <div class="coming-soon">
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                        	<div class="logo wow fadeInDown">
+                        		<h1>
+                        			Evo API Tests
+                        		</h1>
+                        	</div>
+                            <div class="subscribe wow fadeInDown">
+                            	<p>
+                            		<button id="uaBtn">User Authentication 2.0</button>
+                                    <button id="dglBtn">Direct Game Launch</button>
+                                    <button id="ghBtn">Game History</button>
+                                    <button id="gsBtn">Game Streaming</button>
+                                    <button id="owBtn">One Wallet</button>
+                            	</p>
+                            </div>
+                            <!--                         UA 我是分隔線                          -->
+                            <div class="ua subscribe wow fadeInDown" id="ua">
+			                    <form class="form-inline" action="" method="post">
+
+                                    <button type="submit" class="btn">Go</button>
+                                    <p>
+                                        casino.key: <input type="text" name="casino" placeholder="" class="ua-casino" value="John"><br><br>
+
+                                        api.token: <input type="text" name="api" placeholder="" class="ua-api"value="John"><br><br>
+
+                                        hostname: <input type="text" name="hostname" placeholder="" class="ua-hostname"value="John"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        uuid: <input type="text" name="uuid" placeholder="" class="ua-uuid"value="1234567890123456"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Player:<br>
+                                        id: <input type="text" name="pid" placeholder="" class="ua-pid"value="a1a2a3a4"><br><br>
+                                        update: <input type="text" name="update" placeholder="" class="ua-update"value="true"><br><br>
+                                        firstName: <input type="text" name="firstName" placeholder="" class="ua-firstName"value="firstName"><br><br>
+                                        lastName: <input type="text" name="lastName" placeholder="" class="ua-lastName"value="lastName"><br><br>
+                                        nickname: <input type="text" name="nickname" placeholder="" class="ua-nickname"value="nickname"><br><br>
+                                        country: <input type="text" name="country" placeholder="" class="ua-country"value="DE"><br><br>
+                                        language: <input type="text" name="language" placeholder="" class="ua-language"value="en"><br><br>
+                                        currency: <input type="text" name="currency" placeholder="" class="ua-currency"value="EUR"><br><br>
+                                        
+                                        Session:<br>
+                                        id: <input type="text" name="sid" placeholder="" class="ua-sid"value="111ssss3333rrrrr45555"><br><br>
+                                        ip: <input type="text" name="sip" placeholder="" class="ua-sip"value="192.168.0.1"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Group: <br>
+                                        id: <input type="text" name="gid" placeholder="" class="ua-gid"value="234sdkjhdjkhvsdfs"><br><br>
+                                        action: <input type="text" name="action" placeholder="" class="ua-action"value="assign"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Config: <br>
+                                        Brand: <br>
+                                        id: <input type="text" name="bid" placeholder="" class="ua-bid"value="1"><br><br>
+                                        skin: <input type="text" name="skin" placeholder="" class="ua-skin"value="1"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Game: <br>
+                                        category: <input type="text" name="category" placeholder="" class="ua-category"value="roulette"><br><br>
+                                        interface: <input type="text" name="interface" placeholder="" class="ua-interface"value="view1"><br><br>
+
+                                        Table: <br>
+                                        id: <input type="text" name="tid" placeholder="" class="ua-tid"value="vip-roulette-123"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Channel: <br> 
+                                        wrapped: <input type="text" name="wrapped" placeholder="" class="ua-wrapped"value="false"><br><br>
+                                        mobile: <input type="text" name="mobile" placeholder="" class="ua-mobile"value="false"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        urls: <br>
+                                        cashier: <input type="text" name="cashier" placeholder="" class="ua-cashier"value="http://www.chs.ee"><br><br>
+                                        responsibleGaming: <input type="text" name="responsibleGaming" placeholder="" class="ua-responsibleGaming"value="http://www.RGam.ee"><br><br>
+                                        lobby: <input type="text" name="lobby" placeholder="" class="ua-lobby"value="http://www.lobb.ee"><br><br>
+                                        sessionTimeout: <input type="text" name="sessionTimeout" placeholder="" class="ua-sessionTimeout"value="http://www.sesstm.ee"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        freeGames: <input type="text" name="freeGames" placeholder="" class="ua-freeGames"value="false"><br><br>
+                                    <p/>
+
+                                    <button type="submit" class="btn">Go</button>
+                                </form>
+			                    <div class="ua-success-message"></div>
+			                    <div class="ua-error-message"></div>
+			                </div>
+
+                            <!--                         DGL 我是分隔線                          -->
+                            <div class="dgl subscribe wow fadeInDown" id="dgl">
+                                <form class="form-inline" action="" method="post">
+
+                                    <button type="submit" class="btn">Go</button>
+                                    <p>
+                                        licensee_hostname: <input type="text" name="licensee_hostname" placeholder="" class="licensee_hostname" value="livecasino.theverybestcasino.com"><br><br>
+
+                                        casino_id: <input type="text" name="casino_id" placeholder="" class="casino_id"value="thebestcasino001"><br><br>
+                                    <p/>
+
+
+                                    <button type="submit" class="btn">Go</button>
+                                </form>
+                                <div class="ua-success-message"></div>
+                                <div class="ua-error-message"></div>
+                            </div>
+
+                            <!--                         GH 我是分隔線                          -->
+                            <div class="gh subscribe wow fadeInDown" id="gh">
+                                <form class="form-inline" action="" method="post">
+
+                                    <button type="submit" class="btn">Go</button>
+                                    <p>
+                                        licensee_hostname: <input type="text" name="licensee_hostname" placeholder="" class="licensee_hostname" value="John"><br><br>
+
+                                        casino_id: <input type="text" name="casino_id" placeholder="" class="casino_id"value="John"><br><br>
+                                    <p/>
+
+                                    <button type="submit" class="btn">Go</button>
+                                </form>
+                                <div class="ua-success-message"></div>
+                                <div class="ua-error-message"></div>
+                            </div>
+
+                            <!--                         GS 我是分隔線                          -->
+                            <div class="gs subscribe wow fadeInDown" id="gs">
+                                <form class="form-inline" action="" method="post">
+
+                                    <button type="submit" class="btn">Go</button>
+                                    <p>
+                                        casino.key: <input type="text" name="casino" placeholder="" class="ua-casino" value="John"><br><br>
+
+                                        api.token: <input type="text" name="api" placeholder="" class="ua-api"value="John"><br><br>
+
+                                        hostname: <input type="text" name="hostname" placeholder="" class="ua-hostname"value="John"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        uuid: <input type="text" name="uuid" placeholder="" class="ua-uuid"value="1234567890123456"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Player:<br>
+                                        id: <input type="text" name="pid" placeholder="" class="ua-pid"value="a1a2a3a4"><br><br>
+                                        update: <input type="text" name="update" placeholder="" class="ua-update"value="true"><br><br>
+                                        firstName: <input type="text" name="firstName" placeholder="" class="ua-firstName"value="firstName"><br><br>
+                                        lastName: <input type="text" name="lastName" placeholder="" class="ua-lastName"value="lastName"><br><br>
+                                        nickname: <input type="text" name="nickname" placeholder="" class="ua-nickname"value="nickname"><br><br>
+                                        country: <input type="text" name="country" placeholder="" class="ua-country"value="DE"><br><br>
+                                        language: <input type="text" name="language" placeholder="" class="ua-language"value="en"><br><br>
+                                        currency: <input type="text" name="currency" placeholder="" class="ua-currency"value="EUR"><br><br>
+                                        
+                                        Session:<br>
+                                        id: <input type="text" name="sid" placeholder="" class="ua-sid"value="111ssss3333rrrrr45555"><br><br>
+                                        ip: <input type="text" name="sip" placeholder="" class="ua-sip"value="192.168.0.1"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Group: <br>
+                                        id: <input type="text" name="gid" placeholder="" class="ua-gid"value="234sdkjhdjkhvsdfs"><br><br>
+                                        action: <input type="text" name="action" placeholder="" class="ua-action"value="assign"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Config: <br>
+                                        Brand: <br>
+                                        id: <input type="text" name="bid" placeholder="" class="ua-bid"value="1"><br><br>
+                                        skin: <input type="text" name="skin" placeholder="" class="ua-skin"value="1"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Game: <br>
+                                        category: <input type="text" name="category" placeholder="" class="ua-category"value="roulette"><br><br>
+                                        interface: <input type="text" name="interface" placeholder="" class="ua-interface"value="view1"><br><br>
+
+                                        Table: <br>
+                                        id: <input type="text" name="tid" placeholder="" class="ua-tid"value="vip-roulette-123"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Channel: <br> 
+                                        wrapped: <input type="text" name="wrapped" placeholder="" class="ua-wrapped"value="false"><br><br>
+                                        mobile: <input type="text" name="mobile" placeholder="" class="ua-mobile"value="false"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        urls: <br>
+                                        cashier: <input type="text" name="cashier" placeholder="" class="ua-cashier"value="http://www.chs.ee"><br><br>
+                                        responsibleGaming: <input type="text" name="responsibleGaming" placeholder="" class="ua-responsibleGaming"value="http://www.RGam.ee"><br><br>
+                                        lobby: <input type="text" name="lobby" placeholder="" class="ua-lobby"value="http://www.lobb.ee"><br><br>
+                                        sessionTimeout: <input type="text" name="sessionTimeout" placeholder="" class="ua-sessionTimeout"value="http://www.sesstm.ee"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        freeGames: <input type="text" name="freeGames" placeholder="" class="ua-freeGames"value="false"><br><br>
+                                    <p/>
+
+                                    <button type="submit" class="btn">Go</button>
+                                </form>
+                                <div class="ua-success-message"></div>
+                                <div class="ua-error-message"></div>
+                            </div>
+
+                            <!--                         OW 我是分隔線                          -->
+                            <div class="ow subscribe wow fadeInDown" id="ow">
+                                <form class="form-inline" action="" method="post">
+
+                                    <button type="submit" class="btn">Go</button>
+                                    <p>
+                                        casino.key: <input type="text" name="casino" placeholder="" class="ua-casino" value="John"><br><br>
+
+                                        api.token: <input type="text" name="api" placeholder="" class="ua-api"value="John"><br><br>
+
+                                        hostname: <input type="text" name="hostname" placeholder="" class="ua-hostname"value="John"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        uuid: <input type="text" name="uuid" placeholder="" class="ua-uuid"value="1234567890123456"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Player:<br>
+                                        id: <input type="text" name="pid" placeholder="" class="ua-pid"value="a1a2a3a4"><br><br>
+                                        update: <input type="text" name="update" placeholder="" class="ua-update"value="true"><br><br>
+                                        firstName: <input type="text" name="firstName" placeholder="" class="ua-firstName"value="firstName"><br><br>
+                                        lastName: <input type="text" name="lastName" placeholder="" class="ua-lastName"value="lastName"><br><br>
+                                        nickname: <input type="text" name="nickname" placeholder="" class="ua-nickname"value="nickname"><br><br>
+                                        country: <input type="text" name="country" placeholder="" class="ua-country"value="DE"><br><br>
+                                        language: <input type="text" name="language" placeholder="" class="ua-language"value="en"><br><br>
+                                        currency: <input type="text" name="currency" placeholder="" class="ua-currency"value="EUR"><br><br>
+                                        
+                                        Session:<br>
+                                        id: <input type="text" name="sid" placeholder="" class="ua-sid"value="111ssss3333rrrrr45555"><br><br>
+                                        ip: <input type="text" name="sip" placeholder="" class="ua-sip"value="192.168.0.1"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Group: <br>
+                                        id: <input type="text" name="gid" placeholder="" class="ua-gid"value="234sdkjhdjkhvsdfs"><br><br>
+                                        action: <input type="text" name="action" placeholder="" class="ua-action"value="assign"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Config: <br>
+                                        Brand: <br>
+                                        id: <input type="text" name="bid" placeholder="" class="ua-bid"value="1"><br><br>
+                                        skin: <input type="text" name="skin" placeholder="" class="ua-skin"value="1"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Game: <br>
+                                        category: <input type="text" name="category" placeholder="" class="ua-category"value="roulette"><br><br>
+                                        interface: <input type="text" name="interface" placeholder="" class="ua-interface"value="view1"><br><br>
+
+                                        Table: <br>
+                                        id: <input type="text" name="tid" placeholder="" class="ua-tid"value="vip-roulette-123"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        Channel: <br> 
+                                        wrapped: <input type="text" name="wrapped" placeholder="" class="ua-wrapped"value="false"><br><br>
+                                        mobile: <input type="text" name="mobile" placeholder="" class="ua-mobile"value="false"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        urls: <br>
+                                        cashier: <input type="text" name="cashier" placeholder="" class="ua-cashier"value="http://www.chs.ee"><br><br>
+                                        responsibleGaming: <input type="text" name="responsibleGaming" placeholder="" class="ua-responsibleGaming"value="http://www.RGam.ee"><br><br>
+                                        lobby: <input type="text" name="lobby" placeholder="" class="ua-lobby"value="http://www.lobb.ee"><br><br>
+                                        sessionTimeout: <input type="text" name="sessionTimeout" placeholder="" class="ua-sessionTimeout"value="http://www.sesstm.ee"><br><br>
+                                    <p/>
+
+                                    <p>
+                                        freeGames: <input type="text" name="freeGames" placeholder="" class="ua-freeGames"value="false"><br><br>
+                                    <p/>
+
+                                    <button type="submit" class="btn">Go</button>
+                                </form>
+                                <div class="ua-success-message"></div>
+                                <div class="ua-error-message"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-7 footer-copyright">
+	                    <p>Copyright 2020 Jim Lai All Rights Reserved.</p>
+	                </div>
+	                <div class="col-sm-5 footer-social pull-right" hidden="true">
+	                	<ul class="social-icon">
+								<li><a href="https://www.facebook.com/Slash-TW-108261217644877/"><i class="fa fa-facebook-square"></i></a></li>
+                                <!--<li><a href=""><i class="fa fa-linkedin-square"></i></a></li>
+								<li><a href="https://www.facebook.com/Slash-TW-108261217644877/"><i class="fa fa-facebook-square"></i></a></li>
+								<li><a href=""><i class="fa fa-twitter-square"></i></a></li>
+								<li><a href=""><i class="fa fa-youtube-square"></i></a></li>-->
+							</ul> 
+	                </div>
+	            </div>
+	        </div>
+        </footer>
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.10.2.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/jquery.countdown.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>
