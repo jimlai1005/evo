@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "36c0a328-3fd7-40f4-abf9-20ef9587333b",
+		"name": "Evolution",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Authentication 2.0",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"uuid\": \"unique request identifier\",\n  \"player\": {\n    \"id\": \"a1a2a3a4\",\n    \"update\": true,\n    \"firstName\": \"firstName\",\n    \"lastName\": \"lastName\",\n    \"nickname\": \"nickname\",\n    \"country\": \"DE\",\n    \"language\": \"de\",\n    \"currency\": \"EUR\",\n    \"session\": {\n      \"id\": \"111ssss3333rrrrr45555\",\n      \"ip\": \"192.168.0.1\"\n    },\n    \"group\": {\n      \"id\": \"234sdkjhdjkhvsdfs\",\n      \"action\": \"assign\"\n    }\n  },\n  \"config\": {\n    \"brand\": {\n      \"id\": \"1\",\n      \"skin\": \"1\"\n    },\n    \"game\": {\n      \"category\": \"roulette\",\n      \"interface\": \"view1\",  \n      \"table\": {\n        \"id\": \"wzg6kdkad1oe7m5k\"\n      }\n    },\n    \"channel\": {\n      \"wrapped\": false,\n      \"mobile\": false\n    },\n    \"urls\": {\n      \"cashier\": \"http://www.chs.ee\",\n      \"responsibleGaming\": \"http://www.RGam.ee\",\n      \"lobby\": \"http://www.lobb.ee\",\n      \"sessionTimeout\": \"http://www.sesstm.ee\"\n    },\n    \"freeGames\": false\n  }\n}"
+				},
+				"url": "https://diyow3.uat1.evo-test.com/ua/v1/diyow30000000001/test123"
+			},
+			"response": []
+		},
+		{
+			"name": "DGL Streaming",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://diyow30000000001:test123@diyow3.uat1.evo-test.com/api/lobby/v1/diyow30000000001/live"
+			},
+			"response": []
+		},
+		{
+			"name": "DGL state",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://diyow30000000001:test123@diyow3.uat1.evo-test.com/api/lobby/v1/diyow30000000001/state"
+			},
+			"response": []
+		},
+		{
+			"name": "\b\bGH",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Basic ZGl5b3czMDAwMDAwMDAwMTp0ZXN0MTIz",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://diyow3.uat1.evo-test.com/api/gamehistory/v1/casino/daily-report"
+			},
+			"response": []
+		},
+		{
+			"name": "GS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": " Basic ZGl5b3czMDAwMDAwMDAwMTp0ZXN0MTIz",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://diyow3.uat1.evo-test.com/api/streaming/game/v1/?transmissionId=76332d312d302d312d31363039373438313233383739",
+					"protocol": "https",
+					"host": [
+						"diyow3",
+						"uat1",
+						"evo-test",
+						"com"
+					],
+					"path": [
+						"api",
+						"streaming",
+						"game",
+						"v1",
+						""
+					],
+					"query": [
+						{
+							"key": "transmissionId",
+							"value": "76332d312d302d312d31363039373438313233383739"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FT EDB \bDebit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://diyft.uat1.evo-test.com/api/ecashier?cCode=EDB&ecID=diyft00000000001lwwnvexgmzfaaaac&euID=c1c2c3c4&amount=2.51&eTransID=Dt116bf1de-7e3f-4310-9906-13b50f623fba&output=1",
+					"protocol": "https",
+					"host": [
+						"diyft",
+						"uat1",
+						"evo-test",
+						"com"
+					],
+					"path": [
+						"api",
+						"ecashier"
+					],
+					"query": [
+						{
+							"key": "cCode",
+							"value": "EDB"
+						},
+						{
+							"key": "ecID",
+							"value": "diyft00000000001lwwnvexgmzfaaaac"
+						},
+						{
+							"key": "euID",
+							"value": "c1c2c3c4"
+						},
+						{
+							"key": "amount",
+							"value": "2.51"
+						},
+						{
+							"key": "eTransID",
+							"value": "Dt116bf1de-7e3f-4310-9906-13b50f623fba"
+						},
+						{
+							"key": "output",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FT ECR Credit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://diyft.uat1.evo-test.com/api/ecashier?cCode=ECR&ecID=diyft00000000001lwwnvexgmzfaaaac&euID=c1c2c3c4&amount=5.99&eTransID=Ct116bf1de-7e3f-4310-9906-13b50f623fba&output=1",
+					"protocol": "https",
+					"host": [
+						"diyft",
+						"uat1",
+						"evo-test",
+						"com"
+					],
+					"path": [
+						"api",
+						"ecashier"
+					],
+					"query": [
+						{
+							"key": "cCode",
+							"value": "ECR"
+						},
+						{
+							"key": "ecID",
+							"value": "diyft00000000001lwwnvexgmzfaaaac"
+						},
+						{
+							"key": "euID",
+							"value": "c1c2c3c4"
+						},
+						{
+							"key": "amount",
+							"value": "5.99"
+						},
+						{
+							"key": "eTransID",
+							"value": "Ct116bf1de-7e3f-4310-9906-13b50f623fba"
+						},
+						{
+							"key": "createuser",
+							"value": "Y",
+							"disabled": true
+						},
+						{
+							"key": "output",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FT RWA Balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://diyft.uat1.evo-test.com/api/ecashier? cCode=RWA&ecID=diyft00000000001lwwnvexgmzfaaaac&euID=c1c2c3c4&output=1",
+					"protocol": "https",
+					"host": [
+						"diyft",
+						"uat1",
+						"evo-test",
+						"com"
+					],
+					"path": [
+						"api",
+						"ecashier"
+					],
+					"query": [
+						{
+							"key": " cCode",
+							"value": "RWA"
+						},
+						{
+							"key": "ecID",
+							"value": "diyft00000000001lwwnvexgmzfaaaac"
+						},
+						{
+							"key": "euID",
+							"value": "c1c2c3c4"
+						},
+						{
+							"key": "output",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FT TRI History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://diyft.uat1.evo-test.com/api/ecashier?cCode=TRI&ecID=diyft00000000001lwwnvexgmzfaaaac&euID=c1c2c3c4&output=1&eTransID=Ct116bf0de-7e3f-4310-9906-13b50f623fba",
+					"protocol": "https",
+					"host": [
+						"diyft",
+						"uat1",
+						"evo-test",
+						"com"
+					],
+					"path": [
+						"api",
+						"ecashier"
+					],
+					"query": [
+						{
+							"key": "cCode",
+							"value": "TRI"
+						},
+						{
+							"key": "ecID",
+							"value": "diyft00000000001lwwnvexgmzfaaaac"
+						},
+						{
+							"key": "euID",
+							"value": "c1c2c3c4"
+						},
+						{
+							"key": "output",
+							"value": "1"
+						},
+						{
+							"key": "eTransID",
+							"value": "Ct116bf0de-7e3f-4310-9906-13b50f623fba"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FT GUI Player Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://diyft.uat1.evo-test.com/api/ecashier?cCode=GUI&ecID=diyft00000000001lwwnvexgmzfaaaac&euID=c1c2c3c4&output=1",
+					"protocol": "https",
+					"host": [
+						"diyft",
+						"uat1",
+						"evo-test",
+						"com"
+					],
+					"path": [
+						"api",
+						"ecashier"
+					],
+					"query": [
+						{
+							"key": "cCode",
+							"value": "GUI"
+						},
+						{
+							"key": "ecID",
+							"value": "diyft00000000001lwwnvexgmzfaaaac"
+						},
+						{
+							"key": "euID",
+							"value": "c1c2c3c4"
+						},
+						{
+							"key": "output",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OW check",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sid\":\"bea9f79d06304406965643c40862ac31\",\n  \"userId\":\"a1a2a3a4\",\n  \"channel\":{\n          \"type\":\"P\"\n          },\n  \"uuid\":\"ce186440-ed92-11e3-ac10-0800200c9a66\"\n}"
+				},
+				"url": {
+					"raw": "https://1qgkl7lb07.execute-api.ap-southeast-1.amazonaws.com/prod/check?authToken=s3cr3tV4lu3 ",
+					"protocol": "https",
+					"host": [
+						"1qgkl7lb07",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"check"
+					],
+					"query": [
+						{
+							"key": "authToken",
+							"value": "s3cr3tV4lu3 "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OW balance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\"sid\":\"bea9f79d06304406965643c40862ac31\",   \n\"userId\":\"a1a2a3a4\",   \n\"game\": null,   \n\"currency\":\"EUR\", \n\"uuid\":\"1234567890123456\"\n}"
+				},
+				"url": {
+					"raw": "https://1qgkl7lb07.execute-api.ap-southeast-1.amazonaws.com/prod/balance?authToken=s3cr3tV4lu3 ",
+					"protocol": "https",
+					"host": [
+						"1qgkl7lb07",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "authToken",
+							"value": "s3cr3tV4lu3 "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OW debit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sid\":\"bea9f79d06304406965643c40862ac31\",\"userId\":\"a1a2a3a4\",\"uuid\":\"68afbd55-84da-4e92-a1e8-340eeacd5992\",\"currency\":\"EUR\",\"game\":{\"id\":\"ge31ec05d-b517-4dd3-8b1b-bbc991c520db\",\"type\":\"craps\",\"details\":{\"table\":{\"id\":\"Craps00000000001\",\"vid\":null}}},\"transaction\":{\"id\":\"Dt116bf0de-7e3f-4310-9906-13b50f623fba\",\"refId\":\"t116bf0de-7e3f-4310-9906-13b50f623fba\",\"amount\":4.19},\"someFakeField\":\"someFakeField\"}\n"
+				},
+				"url": {
+					"raw": "https://1qgkl7lb07.execute-api.ap-southeast-1.amazonaws.com/prod/debit?authToken=s3cr3tV4lu3 ",
+					"protocol": "https",
+					"host": [
+						"1qgkl7lb07",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"debit"
+					],
+					"query": [
+						{
+							"key": "authToken",
+							"value": "s3cr3tV4lu3 "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OW credit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sid\":\"bea9f79d06304406965643c40862ac31\",\"userId\":\"a1a2a3a4\",\"uuid\":\"61143ec7-bcfd-4be4-8259-f375a8550922\",\"currency\":\"EUR\",\"game\":{\"id\":\"ge31ec05d-b517-4dd3-8b1b-bbc991c520db\",\"type\":\"craps\",\"details\":{\"table\":{\"id\":\"Craps00000000001\",\"vid\":null}}},\"transaction\":{\"id\":\"Ct116bf0de-7e3f-4310-9906-13b50f623fba\",\"refId\":\"t116bf0de-7e3f-4310-9906-13b50f623fba\",\"amount\":4.19},\"someFakeField\":\"someFakeField\"}\n"
+				},
+				"url": {
+					"raw": "https://1qgkl7lb07.execute-api.ap-southeast-1.amazonaws.com/prod/credit?authToken=s3cr3tV4lu3 ",
+					"protocol": "https",
+					"host": [
+						"1qgkl7lb07",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"credit"
+					],
+					"query": [
+						{
+							"key": "authToken",
+							"value": "s3cr3tV4lu3 "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OW \bcancel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"sid\":\"bea9f79d06304406965643c40862ac31\",\"userId\":\"a1a2a3a4\",\"uuid\":\"bb3f974c-62d2-496f-b147-79ce92139772\",\"currency\":\"EUR\",\"game\":{\"id\":\"ge31ec05d-b517-4dd3-8b1b-bbc991c520db\",\"type\":\"craps\",\"details\":{\"table\":{\"id\":\"Craps00000000001\",\"vid\":null}}},\"transaction\":{\"id\":\"Dt116bf0de-7e3f-4310-9906-13b50f623fba\",\"refId\":\"t116bf0de-7e3f-4310-9906-13b50f623fba\",\"amount\":4.19},\"someFakeField\":\"someFakeField\"}\n"
+				},
+				"url": {
+					"raw": "https://1qgkl7lb07.execute-api.ap-southeast-1.amazonaws.com/prod/cancel?authToken=s3cr3tV4lu3 ",
+					"protocol": "https",
+					"host": [
+						"1qgkl7lb07",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"cancel"
+					],
+					"query": [
+						{
+							"key": "authToken",
+							"value": "s3cr3tV4lu3 "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OW sid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\":\"a1a2a3a4\",\n  \"channel\":{\n          \"type\":\"P\"\n          },\n  \"uuid\":\"ce186440-ed92-11e3-ac10-0800200c9a66\"\n}"
+				},
+				"url": {
+					"raw": "https://1qgkl7lb07.execute-api.ap-southeast-1.amazonaws.com/prod/sid?authToken=s3cr3tV4lu3 ",
+					"protocol": "https",
+					"host": [
+						"1qgkl7lb07",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"sid"
+					],
+					"query": [
+						{
+							"key": "authToken",
+							"value": "s3cr3tV4lu3 "
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
