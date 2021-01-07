@@ -5,7 +5,8 @@
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/> 
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
         <title>Evo API Tests</title>
 
         <!-- CSS -->
@@ -43,22 +44,28 @@
                             	<p>
                             		<button id="uaBtn">User Authentication 2.0</button>
                                     <button id="dglBtn">Direct Game Launch</button>
+                                    <button id="iframetagBtn">Mini Roulette</button>
+                                </p>
+                                <p>
                                     <button id="ghBtn">Game History</button>
                                     <button id="gsBtn">Game Streaming</button>
-                                    <button id="owBtn">One Wallet</button>
+                                    <!-- <button id="owBtn">One Wallet</button> -->
                             	</p>
                             </div>
-                            <!--                         UA 我是分隔線                          -->
+<!--            UA 我是分隔線                          -->
                             <div class="ua subscribe wow fadeInDown" id="ua">
-			                    <form class="form-inline" action="" method="post">
+			                    <div class="ua-success-message"></div>
+                                <div class="ua-error-message"></div>
+                                <br>
+                                <form class="form-inline" action="" method="post">
 
                                     <button type="submit" class="btn">Go</button>
                                     <p>
-                                        casino.key: <input type="text" name="casino" placeholder="" class="ua-casino" value="John"><br><br>
+                                        casino.key: <input type="text" name="casino" placeholder="" class="ua-casino" value="diyow30000000001"><br><br> 
 
-                                        api.token: <input type="text" name="api" placeholder="" class="ua-api"value="John"><br><br>
+                                        api.token: <input type="text" name="api" placeholder="" class="ua-api"value="test123"><br><br>
 
-                                        hostname: <input type="text" name="hostname" placeholder="" class="ua-hostname"value="John"><br><br>
+                                        hostname: <input type="text" name="hostname" placeholder="" class="ua-hostname"value="diyow3.uat1.evo-test.com"><br><br>
                                     <p/>
 
                                     <p>
@@ -69,9 +76,9 @@
                                         Player:<br>
                                         id: <input type="text" name="pid" placeholder="" class="ua-pid"value="a1a2a3a4"><br><br>
                                         update: <input type="text" name="update" placeholder="" class="ua-update"value="true"><br><br>
-                                        firstName: <input type="text" name="firstName" placeholder="" class="ua-firstName"value="firstName"><br><br>
-                                        lastName: <input type="text" name="lastName" placeholder="" class="ua-lastName"value="lastName"><br><br>
-                                        nickname: <input type="text" name="nickname" placeholder="" class="ua-nickname"value="nickname"><br><br>
+                                        firstName: <input type="text" name="firstName" placeholder="" class="ua-firstName"value="Jim"><br><br>
+                                        lastName: <input type="text" name="lastName" placeholder="" class="ua-lastName"value="Lai"><br><br>
+                                        nickname: <input type="text" name="nickname" placeholder="" class="ua-nickname"value="Jim"><br><br>
                                         country: <input type="text" name="country" placeholder="" class="ua-country"value="DE"><br><br>
                                         language: <input type="text" name="language" placeholder="" class="ua-language"value="en"><br><br>
                                         currency: <input type="text" name="currency" placeholder="" class="ua-currency"value="EUR"><br><br>
@@ -96,11 +103,11 @@
 
                                     <p>
                                         Game: <br>
-                                        category: <input type="text" name="category" placeholder="" class="ua-category"value="roulette"><br><br>
+                                        category: <input type="text" name="category" placeholder="" class="ua-category"value="blackjack"><br><br>
                                         interface: <input type="text" name="interface" placeholder="" class="ua-interface"value="view1"><br><br>
 
                                         Table: <br>
-                                        id: <input type="text" name="tid" placeholder="" class="ua-tid"value="vip-roulette-123"><br><br>
+                                        id: <input type="text" name="tid" placeholder="" class="ua-tid"value="g48qnr279zcxecmd"><br><br>
                                     <p/>
 
                                     <p>
@@ -123,202 +130,102 @@
 
                                     <button type="submit" class="btn">Go</button>
                                 </form>
-			                    <div class="ua-success-message"></div>
-			                    <div class="ua-error-message"></div>
+			                    
 			                </div>
 
-                            <!--                         DGL 我是分隔線                          -->
+<!--            DGL 我是分隔線                          -->
                             <div class="dgl subscribe wow fadeInDown" id="dgl">
+                                <div class="dgl-success-message"></div>
+                                <div class="dgl-error-message"></div>
+                                <br>
                                 <form class="form-inline" action="" method="post">
 
                                     <button type="submit" class="btn">Go</button>
                                     <p>
-                                        licensee_hostname: <input type="text" name="licensee_hostname" placeholder="" class="licensee_hostname" value="livecasino.theverybestcasino.com"><br><br>
+                                        licensee_hostname: <input type="text" name="licensee_hostname" placeholder="" class="dgl-licensee_hostname" value="diyow3.uat1.evo-test.com"><br><br>
 
-                                        casino_id: <input type="text" name="casino_id" placeholder="" class="casino_id"value="thebestcasino001"><br><br>
+                                        casino_id: <input type="text" name="casino_id" placeholder="" class="dgl-casino_id"value="diyow30000000001"><br><br>
+
+                                        api.token: <input type="text" name="api" placeholder="" class="dgl-api"value="test123"><br><br>
                                     <p/>
 
 
                                     <button type="submit" class="btn">Go</button>
                                 </form>
-                                <div class="ua-success-message"></div>
-                                <div class="ua-error-message"></div>
+                                
                             </div>
 
-                            <!--                         GH 我是分隔線                          -->
+<!--            GH 我是分隔線                          -->
                             <div class="gh subscribe wow fadeInDown" id="gh">
+                                <div class="gh-success-message"></div>
+                                <div class="gh-error-message"></div>
+                                <br>
                                 <form class="form-inline" action="" method="post">
 
                                     <button type="submit" class="btn">Go</button>
                                     <p>
-                                        licensee_hostname: <input type="text" name="licensee_hostname" placeholder="" class="licensee_hostname" value="John"><br><br>
+                                        licensee_hostname: <input type="text" name="licensee_hostname" placeholder="" class="gh-licensee_hostname" value="diyow3.uat1.evo-test.com"><br><br>
 
-                                        casino_id: <input type="text" name="casino_id" placeholder="" class="casino_id"value="John"><br><br>
+                                        casino_id: <input type="text" name="casino_id" placeholder="" class="gh-casino_id"value="diyow30000000001"><br><br>
+
+                                        api.token: <input type="text" name="api" placeholder="" class="gh-api"value="test123"><br><br>
                                     <p/>
 
                                     <button type="submit" class="btn">Go</button>
                                 </form>
-                                <div class="ua-success-message"></div>
-                                <div class="ua-error-message"></div>
+                                
                             </div>
 
-                            <!--                         GS 我是分隔線                          -->
+<!--            GS 我是分隔線                          -->
                             <div class="gs subscribe wow fadeInDown" id="gs">
+                                <div class="gs-iframeTag"></div>
+                                <div class="gs-success-message"></div>
+                                <div class="gs-error-message"></div>
+                                <br>
                                 <form class="form-inline" action="" method="post">
 
                                     <button type="submit" class="btn">Go</button>
                                     <p>
-                                        casino.key: <input type="text" name="casino" placeholder="" class="ua-casino" value="John"><br><br>
+                                        licensee_hostname: <input type="text" name="licensee_hostname" placeholder="" class="gs-licensee_hostname" value="diyow3.uat1.evo-test.com"><br><br>
 
-                                        api.token: <input type="text" name="api" placeholder="" class="ua-api"value="John"><br><br>
+                                        casino_id: <input type="text" name="casino_id" placeholder="" class="gs-casino_id"value="diyow30000000001"><br><br>
 
-                                        hostname: <input type="text" name="hostname" placeholder="" class="ua-hostname"value="John"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        uuid: <input type="text" name="uuid" placeholder="" class="ua-uuid"value="1234567890123456"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        Player:<br>
-                                        id: <input type="text" name="pid" placeholder="" class="ua-pid"value="a1a2a3a4"><br><br>
-                                        update: <input type="text" name="update" placeholder="" class="ua-update"value="true"><br><br>
-                                        firstName: <input type="text" name="firstName" placeholder="" class="ua-firstName"value="firstName"><br><br>
-                                        lastName: <input type="text" name="lastName" placeholder="" class="ua-lastName"value="lastName"><br><br>
-                                        nickname: <input type="text" name="nickname" placeholder="" class="ua-nickname"value="nickname"><br><br>
-                                        country: <input type="text" name="country" placeholder="" class="ua-country"value="DE"><br><br>
-                                        language: <input type="text" name="language" placeholder="" class="ua-language"value="en"><br><br>
-                                        currency: <input type="text" name="currency" placeholder="" class="ua-currency"value="EUR"><br><br>
-                                        
-                                        Session:<br>
-                                        id: <input type="text" name="sid" placeholder="" class="ua-sid"value="111ssss3333rrrrr45555"><br><br>
-                                        ip: <input type="text" name="sip" placeholder="" class="ua-sip"value="192.168.0.1"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        Group: <br>
-                                        id: <input type="text" name="gid" placeholder="" class="ua-gid"value="234sdkjhdjkhvsdfs"><br><br>
-                                        action: <input type="text" name="action" placeholder="" class="ua-action"value="assign"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        Config: <br>
-                                        Brand: <br>
-                                        id: <input type="text" name="bid" placeholder="" class="ua-bid"value="1"><br><br>
-                                        skin: <input type="text" name="skin" placeholder="" class="ua-skin"value="1"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        Game: <br>
-                                        category: <input type="text" name="category" placeholder="" class="ua-category"value="roulette"><br><br>
-                                        interface: <input type="text" name="interface" placeholder="" class="ua-interface"value="view1"><br><br>
-
-                                        Table: <br>
-                                        id: <input type="text" name="tid" placeholder="" class="ua-tid"value="vip-roulette-123"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        Channel: <br> 
-                                        wrapped: <input type="text" name="wrapped" placeholder="" class="ua-wrapped"value="false"><br><br>
-                                        mobile: <input type="text" name="mobile" placeholder="" class="ua-mobile"value="false"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        urls: <br>
-                                        cashier: <input type="text" name="cashier" placeholder="" class="ua-cashier"value="http://www.chs.ee"><br><br>
-                                        responsibleGaming: <input type="text" name="responsibleGaming" placeholder="" class="ua-responsibleGaming"value="http://www.RGam.ee"><br><br>
-                                        lobby: <input type="text" name="lobby" placeholder="" class="ua-lobby"value="http://www.lobb.ee"><br><br>
-                                        sessionTimeout: <input type="text" name="sessionTimeout" placeholder="" class="ua-sessionTimeout"value="http://www.sesstm.ee"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        freeGames: <input type="text" name="freeGames" placeholder="" class="ua-freeGames"value="false"><br><br>
+                                        api.token: <input type="text" name="api" placeholder="" class="gs-api"value="test123"><br><br>
                                     <p/>
 
                                     <button type="submit" class="btn">Go</button>
                                 </form>
-                                <div class="ua-success-message"></div>
-                                <div class="ua-error-message"></div>
+                                
                             </div>
 
-                            <!--                         OW 我是分隔線                          -->
-                            <div class="ow subscribe wow fadeInDown" id="ow">
+<!--            iframetag 我是分隔線                          -->
+                            <div class="iframetag subscribe wow fadeInDown" id="iframetag">
+                                <div class="iframetag-success-message"></div>
+                                <div class="iframetag-error-message"></div>
+                                <div class="iframeTagLive"></div>
+                                <br>
                                 <form class="form-inline" action="" method="post">
 
-                                    <button type="submit" class="btn">Go</button>
+                                    <!-- <button type="submit" class="btn">Go</button> -->
                                     <p>
-                                        casino.key: <input type="text" name="casino" placeholder="" class="ua-casino" value="John"><br><br>
-
-                                        api.token: <input type="text" name="api" placeholder="" class="ua-api"value="John"><br><br>
-
-                                        hostname: <input type="text" name="hostname" placeholder="" class="ua-hostname"value="John"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        uuid: <input type="text" name="uuid" placeholder="" class="ua-uuid"value="1234567890123456"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        Player:<br>
-                                        id: <input type="text" name="pid" placeholder="" class="ua-pid"value="a1a2a3a4"><br><br>
-                                        update: <input type="text" name="update" placeholder="" class="ua-update"value="true"><br><br>
-                                        firstName: <input type="text" name="firstName" placeholder="" class="ua-firstName"value="firstName"><br><br>
-                                        lastName: <input type="text" name="lastName" placeholder="" class="ua-lastName"value="lastName"><br><br>
-                                        nickname: <input type="text" name="nickname" placeholder="" class="ua-nickname"value="nickname"><br><br>
-                                        country: <input type="text" name="country" placeholder="" class="ua-country"value="DE"><br><br>
-                                        language: <input type="text" name="language" placeholder="" class="ua-language"value="en"><br><br>
-                                        currency: <input type="text" name="currency" placeholder="" class="ua-currency"value="EUR"><br><br>
+                                        <!-- <iframe id="iframetagid" frameBorder="0" width="300" height="345" scrolling="no" src="/mlr"></iframe> -->
                                         
-                                        Session:<br>
-                                        id: <input type="text" name="sid" placeholder="" class="ua-sid"value="111ssss3333rrrrr45555"><br><br>
-                                        ip: <input type="text" name="sip" placeholder="" class="ua-sip"value="192.168.0.1"><br><br>
-                                    <p/>
 
-                                    <p>
-                                        Group: <br>
-                                        id: <input type="text" name="gid" placeholder="" class="ua-gid"value="234sdkjhdjkhvsdfs"><br><br>
-                                        action: <input type="text" name="action" placeholder="" class="ua-action"value="assign"><br><br>
-                                    <p/>
+                                        <!-- licensee_hostname: <input type="text" name="licensee_hostname" placeholder="" class="iframetag-licensee_hostname" value="diyow3.uat1.evo-test.com"><br><br>
 
-                                    <p>
-                                        Config: <br>
-                                        Brand: <br>
-                                        id: <input type="text" name="bid" placeholder="" class="ua-bid"value="1"><br><br>
-                                        skin: <input type="text" name="skin" placeholder="" class="ua-skin"value="1"><br><br>
-                                    <p/>
+                                        casino_id: <input type="text" name="casino_id" placeholder="" class="iframetag-casino_id"value="diyow30000000001"><br><br>
 
-                                    <p>
-                                        Game: <br>
-                                        category: <input type="text" name="category" placeholder="" class="ua-category"value="roulette"><br><br>
-                                        interface: <input type="text" name="interface" placeholder="" class="ua-interface"value="view1"><br><br>
-
-                                        Table: <br>
-                                        id: <input type="text" name="tid" placeholder="" class="ua-tid"value="vip-roulette-123"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        Channel: <br> 
-                                        wrapped: <input type="text" name="wrapped" placeholder="" class="ua-wrapped"value="false"><br><br>
-                                        mobile: <input type="text" name="mobile" placeholder="" class="ua-mobile"value="false"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        urls: <br>
-                                        cashier: <input type="text" name="cashier" placeholder="" class="ua-cashier"value="http://www.chs.ee"><br><br>
-                                        responsibleGaming: <input type="text" name="responsibleGaming" placeholder="" class="ua-responsibleGaming"value="http://www.RGam.ee"><br><br>
-                                        lobby: <input type="text" name="lobby" placeholder="" class="ua-lobby"value="http://www.lobb.ee"><br><br>
-                                        sessionTimeout: <input type="text" name="sessionTimeout" placeholder="" class="ua-sessionTimeout"value="http://www.sesstm.ee"><br><br>
-                                    <p/>
-
-                                    <p>
-                                        freeGames: <input type="text" name="freeGames" placeholder="" class="ua-freeGames"value="false"><br><br>
+                                        api.token: <input type="text" name="api" placeholder="" class="iframetag-api"value="test123"><br><br> -->
                                     <p/>
 
                                     <button type="submit" class="btn">Go</button>
                                 </form>
-                                <div class="ua-success-message"></div>
-                                <div class="ua-error-message"></div>
+                                
+                                <!-- <iframe id="iframeTagLiveId" frameBorder="0" width="300" height="345" scrolling="no" src="/mlr"></iframe> -->
                             </div>
+<!--            End                                         -->
+
+
                         </div>
                     </div>
                 </div>
@@ -334,7 +241,7 @@
 	                </div>
 	                <div class="col-sm-5 footer-social pull-right" hidden="true">
 	                	<ul class="social-icon">
-								<li><a href="https://www.facebook.com/Slash-TW-108261217644877/"><i class="fa fa-facebook-square"></i></a></li>
+								<!-- <li><a href="https://www.facebook.com/Slash-TW-108261217644877/"><i class="fa fa-facebook-square"></i></a></li> -->
                                 <!--<li><a href=""><i class="fa fa-linkedin-square"></i></a></li>
 								<li><a href="https://www.facebook.com/Slash-TW-108261217644877/"><i class="fa fa-facebook-square"></i></a></li>
 								<li><a href=""><i class="fa fa-twitter-square"></i></a></li>
@@ -352,7 +259,8 @@
         <script src="assets/js/jquery.countdown.min.js"></script>
         <script src="assets/js/wow.min.js"></script>
         <script src="assets/js/scripts.js"></script>
-        
+        <script src="https://diyow3.uat1.evo-test.com/mobile/js/iframe.js"></script>
+
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
