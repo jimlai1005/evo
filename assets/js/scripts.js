@@ -41,6 +41,7 @@ jQuery(document).ready(function() {
 	$('#gs').hide();
 	$('#ow').hide();
 	$('#iframetag').hide();
+	$('#csid').hide();
 
 	$('#uaBtn').click(function() {
 	  $('#ua').show();
@@ -49,6 +50,7 @@ jQuery(document).ready(function() {
 	  $('#gs').hide();
 	  $('#ow').hide();
 	  $('#iframetag').hide();
+	  $('#csid').hide();
 	});
 	$('#dglBtn').click(function() {
 	  $('#ua').hide();
@@ -57,6 +59,7 @@ jQuery(document).ready(function() {
 	  $('#gs').hide();
 	  $('#ow').hide();
 	  $('#iframetag').hide();
+	  $('#csid').hide();
 	});
 	$('#ghBtn').click(function() {
 	  $('#ua').hide();
@@ -65,6 +68,7 @@ jQuery(document).ready(function() {
 	  $('#gs').hide();
 	  $('#ow').hide();
 	  $('#iframetag').hide();
+	  $('#csid').hide();
 	});
 	$('#gsBtn').click(function() {
 	  $('#ua').hide();
@@ -73,6 +77,7 @@ jQuery(document).ready(function() {
 	  $('#gs').show();
 	  $('#ow').hide();
 	  $('#iframetag').hide();
+	  $('#csid').hide();
 	});
 	$('#owBtn').click(function() {
 	  $('#ua').hide();
@@ -81,6 +86,7 @@ jQuery(document).ready(function() {
 	  $('#gs').hide();
 	  $('#ow').show();
 	  $('#iframetag').hide();
+	  $('#csid').hide();
 	});
 	$('#iframetagBtn').click(function() {
 	  $('#ua').hide();
@@ -89,6 +95,16 @@ jQuery(document).ready(function() {
 	  $('#gs').hide();
 	  $('#ow').hide();
 	  $('#iframetag').show();
+	  $('#csid').hide();
+	});
+	$('#csidBtn').click(function() {
+	  $('#ua').hide();
+	  $('#dgl').hide();
+	  $('#gh').hide();
+	  $('#gs').hide();
+	  $('#ow').hide();
+	  $('#iframetag').hide();
+	  $('#csid').show();
 	});
 	
 	$('.ua form').submit(function(e) {
@@ -196,7 +212,6 @@ jQuery(document).ready(function() {
 		        	$('.dgl-error-message').fadeIn();
 		        }
 	        },
-
 	    });
 	});
 
@@ -232,86 +247,98 @@ jQuery(document).ready(function() {
 		        	$('.gh-error-message').fadeIn();
 		        }
 	        },
-
 	    });
 	});
 
 // GS API	
 	$('.gs form').submit(function(e) {
 		e.preventDefault();
-	    var postdata = $('.gh form').serialize();
+	    var postdata = $('.gs form').serialize();
 	    // formDataString = JSON.stringify(formData);
 	    auth = $('.gs-casino_id').val().trim() + ":" + $('.gs-api').val().trim() ;
     	base64Encode = 'Basic ' + btoa(auth);
     	timeNow = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60000 * 2).toISOString(); // - 24hrs
     	// $('.gs-iframeTag').html('<iframe frameBorder="0" width="1000" height="1345" scrolling="yes" src="https://' + $('.gs-licensee_hostname').val().trim() + '/api/streaming/game/v1/?startTime=' + timeNow +'"></iframe>');
 
+    	var lastResponseLength = false;
+	    $.ajax({
+	        type: 'GET',
+	        contentType: 'application/json',
+	        url: 'https://' + $('.gs-licensee_hostname').val().trim() + '/api/streaming/game/v1/?startTime=' + timeNow,
+	        headers: {'Authorization': base64Encode},
+	        data: '',
+	        dataType: 'json',
+	        beforeSend: function(){
+	        	//console.log('beforeSend')
+	        	$('.gs-success-message').html('Please check the console log...');
+			   	// $('.gs-success-message').html(JSON.stringify(json));
+			    $('.gs-success-message').fadeIn();
+	    	},
+	    	xhrFields: {
+	    		onprogress: function(e){
+	    			//console.log('listening...')
+	    			//console.log(e)
+	    			var progressResponse;
+               		var response = e.currentTarget.response;
+               		if(lastResponseLength === false)
+               		{
+               		    progressResponse = response;
+               		    lastResponseLength = response.length;
+               		}
+               		else
+               		{
+               		    progressResponse = response.substring(lastResponseLength);
+               		    lastResponseLength = response.length;
+               		    if (response.length != 0){
+               		    	//var parsedResponse = JSON.parse(progressResponse);
+               				console.log(progressResponse);
+               		    }
+               		}
+	    		}
+	    	},
+		    success: function(json) {
+		    	//console.log('success...')
+		       	if (json){
+		       		content = 'transmissionId: ' + json.transmissionId + ' <br>messageType: ' + json.messageType + ' <br><br>data: ' + JSON.stringify(json.data) + $('.gs-success-message').html();
+			       	$('.gs-success-message').html(content);
+			       	// $('.gs-success-message').html(JSON.stringify(json));
+			       	$('.gs-success-message').fadeIn();
+			       	$('.gs-error-message').html('');
+			       	// $('.gs-error-message').html('tables: ' + JSON.stringify(json.tables));
+			       	$('.gs-error-message').fadeIn();
+			       	//console.log(content)
+			       }
+			       else{
+			       	jsonErrors = jQuery.parseJSON(json.errors);
+			       	$('.gs-success-message').html(jsonErrors.code);
+			       	$('.gs-success-message').fadeIn();
+			       	$('.gs-error-message').html(jsonErrors.message);
+			       	$('.gs-error-message').fadeIn();
+			       }
+			   },
+		    complete: function(json){
+		    	if (json){
+		    		//console.log(content)
+		    	}
+		    	//console.log('complete')
+		    }
+	    });
+	});
 
-    		var lastResponseLength = false;
-		    $.ajax({
-		        type: 'GET',
-		        contentType: 'application/json',
-		        url: 'https://' + $('.gs-licensee_hostname').val().trim() + '/api/streaming/game/v1/?startTime=' + timeNow,
-		        headers: {'Authorization': base64Encode},
-		        data: '',
-		        dataType: 'json',
-
-		        beforeSend: function(){
-		        	//console.log('beforeSend')
-		        	$('.gs-success-message').html('Please check the console log...');
-				   	// $('.gs-success-message').html(JSON.stringify(json));
-				    $('.gs-success-message').fadeIn();
-		    	},
-		    	xhrFields: {
-		    		onprogress: function(e){
-		    			//console.log('listening...')
-		    			//console.log(e)
-		    			var progressResponse;
-                		var response = e.currentTarget.response;
-                		if(lastResponseLength === false)
-                		{
-                		    progressResponse = response;
-                		    lastResponseLength = response.length;
-                		}
-                		else
-                		{
-                		    progressResponse = response.substring(lastResponseLength);
-                		    lastResponseLength = response.length;
-                		    if (response.length != 0){
-                		    	//var parsedResponse = JSON.parse(progressResponse);
-                				console.log(progressResponse);
-                		    }
-                		}
-		    		}
-		    	},
-			    success: function(json) {
-			    	//console.log('success...')
-			       	if (json){
-			       		content = 'transmissionId: ' + json.transmissionId + ' <br>messageType: ' + json.messageType + ' <br><br>data: ' + JSON.stringify(json.data) + $('.gs-success-message').html();
-				       	$('.gs-success-message').html(content);
-				       	// $('.gs-success-message').html(JSON.stringify(json));
-				       	$('.gs-success-message').fadeIn();
-				       	$('.gs-error-message').html('');
-				       	// $('.gs-error-message').html('tables: ' + JSON.stringify(json.tables));
-				       	$('.gs-error-message').fadeIn();
-				       	//console.log(content)
-				       }
-				       else{
-				       	jsonErrors = jQuery.parseJSON(json.errors);
-				       	$('.gs-success-message').html(jsonErrors.code);
-				       	$('.gs-success-message').fadeIn();
-				       	$('.gs-error-message').html(jsonErrors.message);
-				       	$('.gs-error-message').fadeIn();
-				       }
-				   },
-			    complete: function(json){
-			    	if (json){
-			    		//console.log(content)
-			    	}
-			    	//console.log('complete')
-			    }
-		    });
+// CSID API	
+	$('.csid form').submit(function(e) {
+		e.preventDefault();
+	    var postdata = $('.csid form').serialize();
+	    // formDataString = JSON.stringify(formData);
+		casino_id = ($('.csid-casino_name').val().trim() + "000000000000000").substr(0,15)+ "1";
 		
+		$('.csid-success-message').html(casino_id);
+		// $('.csid-success-message').html(JSON.stringify(json));
+		$('.csid-success-message').fadeIn();
+		$('.csid-error-message').html('');
+		// $('.csid-error-message').html('tables: ' + JSON.stringify(json.tables));
+		$('.csid-error-message').fadeIn();
+    	// $('.csid-iframeTag').html('<iframe frameBorder="0" width="1000" height="1345" scrolling="yes" src="https://' + $('.csid-licensee_hostname').val().trim() + '/api/streaming/game/v1/?startTime=' + timeNow +'"></iframe>');
 	});
 
 // iFrame API	
