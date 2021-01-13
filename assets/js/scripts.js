@@ -330,12 +330,12 @@ jQuery(document).ready(function() {
 		e.preventDefault();
 	    var postdata = $('.csid form').serialize();
 	    // formDataString = JSON.stringify(formData);
-		casino_id = ($('.csid-casino_name').val().trim() + "000000000000000").substr(0,15)+ "1";
+		casino_id = ($('.csid-casino_name').val().toLowerCase().replace(' ','') + "000000000000000").substr(0,15)+ "1";
 		
-		$('.csid-success-message').html(casino_id);
+		$('.csid-success-message').html($('.csid-casino_name').val().toLowerCase().replace(' ',''));
 		// $('.csid-success-message').html(JSON.stringify(json));
 		$('.csid-success-message').fadeIn();
-		$('.csid-error-message').html('');
+		$('.csid-error-message').html(casino_id);
 		// $('.csid-error-message').html('tables: ' + JSON.stringify(json.tables));
 		$('.csid-error-message').fadeIn();
     	// $('.csid-iframeTag').html('<iframe frameBorder="0" width="1000" height="1345" scrolling="yes" src="https://' + $('.csid-licensee_hostname').val().trim() + '/api/streaming/game/v1/?startTime=' + timeNow +'"></iframe>');
