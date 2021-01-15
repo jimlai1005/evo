@@ -148,7 +148,20 @@ jQuery(document).ready(function() {
 			        "cashier": $('.ua-cashier').val().trim(),
 			        "responsibleGaming": $('.ua-responsibleGaming').val().trim(),
 			        "lobby": $('.ua-lobby').val().trim(),
-			        "sessionTimeout": $('.ua-sessionTimeout').val().trim()
+			        "sessionTimeout": $('.ua-sessionTimeout').val().trim(),
+			        "gameHistory": "http://www.RGam.ee",
+					"realityCheckURL": "http://www.RGam.ee",
+					"rngGoLiveURL": "http://www.RGam.ee",
+					"rngGoLiveURLMobile": "http://www.RGam.ee",
+					"rngLobbyButton": "http://www.RGam.ee",
+					"rngCloseButton": "http://www.RGam.ee",
+					"rngHomeButton": "http://www.RGam.ee",
+					"rngSessionTimeout": "http://www.RGam.ee",
+					"rngErrorHandling": "http://www.RGam.ee",
+					"sweSelfTest": "http://www.RGam.ee",
+					"sweGameLimits": "http://www.RGam.ee",
+					"sweSelfExclusion": "http://www.RGam.ee",
+					"freeGames": "http://www.RGam.ee"
 			      },
 			      "freeGames": ($('.ua-freeGames').val().trim() == 'true')
 			    }
