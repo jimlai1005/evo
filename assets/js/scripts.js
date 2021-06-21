@@ -163,7 +163,8 @@ jQuery(document).ready(function() {
 			uaGame = {
 		        // "category": 'rng',
 		        "category": $('.ua-category').val().trim(),
-		        "interface": $('.ua-interface').val().trim()
+		        "interface": $('.ua-interface').val().trim(),
+		        "playMode": $('.ua-playMode').val().trim() 
 		    };
 		}
 		else {
@@ -173,7 +174,8 @@ jQuery(document).ready(function() {
 		        "interface": $('.ua-interface').val().trim(),  
 		        "table": {
 		          "id": $('.ua-tid').val().trim()
-		        } 
+		        },
+		        "playMode": $('.ua-playMode').val().trim() 
 		    };
 		}
 
@@ -276,6 +278,7 @@ jQuery(document).ready(function() {
 		        	$('.dgl-success-message').html('players: ' + json.players + ' <br>ID: ' + json.id + ' <br>Casino ID : ' + json.casinoId + ' <br><br>tables: ' + JSON.stringify(json.tables));
 		        	$('.dgl-success-message').fadeIn();
 		        	// $('.dgl-error-message').html(json.entryEmbedded);
+		        	// $('.dgl-error-message').html(JSON.stringify(tableName));
 		        	// $('.dgl-error-message').html('tables: ' + JSON.stringify(json.tables));
 		        	// $('.dgl-error-message').fadeIn();
 		        }
